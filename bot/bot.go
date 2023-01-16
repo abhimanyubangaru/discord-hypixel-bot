@@ -45,8 +45,6 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 
 	// Respond to messages
 	switch {
-	case strings.Contains(message.Content, "weather"):
-		discord.ChannelMessageSend(message.ChannelID, "I can help with that!")
 	case strings.Contains(message.Content, "bot"):
 		discord.ChannelMessageSend(message.ChannelID, "Hi there!")
 	case strings.Contains(message.Content, "!bw"):
