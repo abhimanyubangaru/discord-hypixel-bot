@@ -48,8 +48,8 @@ func newMessage(discord *discordgo.Session, message *discordgo.MessageCreate) {
 	case strings.Contains(message.Content, "bot"):
 		discord.ChannelMessageSend(message.ChannelID, "Hi there!")
 	case strings.Contains(message.Content, "!bw"):
-		currentWeather := getBedWarInfo(message.Content)
-		discord.ChannelMessageSendComplex(message.ChannelID, currentWeather)
+		bedWarStats := getBedWarInfo(message.Content)
+		discord.ChannelMessageSendComplex(message.ChannelID, bedWarStats)
 	}
 
 }
